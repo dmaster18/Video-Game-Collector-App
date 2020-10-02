@@ -63,7 +63,7 @@ def self.valid_generation?(current_console) #Produces an error if user doesn't e
   end
 end
 
-def self.valid_release_year?(current_console_or_game) #Produces an error if user doesn't enter a game/console between 1972 (the year Atari brought Pong to the arcades) and 2020, the current year.
+def self.valid_release_year?(current_console_or_game) #Produces an error if user doesn't enter a release year between 1972 (the year Atari brought Pong to the arcades) and 2020, the current year.
     true
   else
     release_year = current_console_or_game.release_year.to_i
@@ -100,7 +100,7 @@ def self.valid_console?(current_console) #A valid console must have a valid name
   end
 end
 
-def self.title?(current_game) #Valid game must have a title
+def self.title?(current_game) #Produces an error if user doesn't enter a title for the new or edited game
   if current_game.title == nil || current_game.title == ""
     error = "Game must have a title."
     self.add_game_error(error)
