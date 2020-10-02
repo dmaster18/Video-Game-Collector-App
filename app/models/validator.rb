@@ -1,14 +1,15 @@
-class Validator
+class Validator #Validator class contains methods that validate consoles and games before they are saved into the database
 
   @@console_errors = []
   @@game_errors = []
 
 #Class error methods (for consoles and game errors)
-def self.console_errors
+
+def self.console_errors #Holds list of console errors to tell user why console could not be saved to the database
   @@console_errors
 end
 
-def self.game_errors
+def self.game_errors #Holds list of game errors to tell user why console could not be saved to the database
   @@game_errors
 end
 
