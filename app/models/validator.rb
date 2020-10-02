@@ -41,7 +41,7 @@ def self.company?(current_console) #Produces an error if user doesn't enter a co
   end
 end
 
-def self.valid_generation?(current_console) #Produces an error if user doesn't enter an integer for a console generation between 1 and 9. No console generations exists beyond 9, at the moment.
+def self.valid_generation?(current_console) #Produces an error if user enters a value that is not an integer between 1 and 9 for the optional console generation field. No console generations exists beyond 9, at the moment.
   if current_console.generation == ""
     true
   else
@@ -63,7 +63,7 @@ def self.valid_generation?(current_console) #Produces an error if user doesn't e
   end
 end
 
-def self.valid_release_year?(current_console_or_game) #Produces an error if user doesn't enter a release year between 1972 (the year Atari brought Pong to the arcades) and 2020, the current year.
+def self.valid_release_year?(current_console_or_game) #Produces an error if the user enters an optional release year that is not between 1972 (the year Atari brought Pong to the arcades) and 2020, the current year.
     true
   else
     release_year = current_console_or_game.release_year.to_i
@@ -110,8 +110,7 @@ def self.title?(current_game) #Produces an error if user doesn't enter a title f
   end
 end
 
-def self.valid_rating?(current_game) #In the USA, these are the valid game ratings by the ESRB
-  rating = current_game.rating
+def self.valid_rating?(current_game) #Prdouces an error if the user doesn't enter a valid game rating as dictated by the ESRB, the game ratings board in the USA
   if rating == ""
     true
   else
@@ -125,7 +124,7 @@ def self.valid_rating?(current_game) #In the USA, these are the valid game ratin
   end
 end
 
-def self.console?(current_game) #Does game have a corresponding console/console_id
+def self.console?(current_game) #Produces an error if user doesn't give console
   if current_game.console_id != nil
     true
   else
