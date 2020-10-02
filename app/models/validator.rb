@@ -13,15 +13,15 @@ def self.game_errors #Holds list of game errors to tell user why console could n
   @@game_errors
 end
 
-def self.add_console_error(error)
+def self.add_console_error(error) #Ensures that no duplicate console errors are added to @@console_errors
   self.console_errors << error unless self.console_errors.include?(error)
 end
 
-def self.add_game_error(error)
+def self.add_game_error(error)  #Ensures that no duplicate console errors are added to @@game_errors
   self.game_errors << error unless self.game_errors.include?(error)
 end
 
-def self.name?(current_console)
+def self.name?(current_console) #Produces an error if user doesn't enter a name for the new or edited console
   if current_console.name == nil || current_console.name == ""
     error = "Console must have a name."
     self.add_console_error(error)
@@ -31,7 +31,7 @@ def self.name?(current_console)
   end
 end
 
-def self.company?(current_console)
+def self.company?(current_console) #Produces an error if user doesn't enter a company for the new or edited console
   if current_console.company == nil || current_console.company == ""
     error = "Console must have a company."
     self.add_console_error(error)
@@ -41,7 +41,7 @@ def self.company?(current_console)
   end
 end
 
-def self.valid_generation?(current_console) #Currently, 8 video game generations exist and the ninth will begin at the end of 2020
+def self.valid_generation?(current_console) #Produces an error if user doesn't enter an integer for a console generation between 1 and 9. No console generations exists beyond 9, at the moment.
   if current_console.generation == ""
     true
   else
@@ -63,8 +63,7 @@ def self.valid_generation?(current_console) #Currently, 8 video game generations
   end
 end
 
-def self.valid_release_year?(current_console_or_game) #No console/game can be released earlier than 1972 or later than 2020
-  if current_console_or_game.release_year == ""
+def self.valid_release_year?(current_console_or_game) #Produces an error if user doesn't enter a game/console between 1972 (the year Atari brought Pong to the arcades) and 2020, the current year.
     true
   else
     release_year = current_console_or_game.release_year.to_i
@@ -89,7 +88,7 @@ def self.valid_release_year?(current_console_or_game) #No console/game can be re
   end
 end
 
-def self.valid_console?(current_console) #Valid console must have a valid name, company, release year, and generation
+def self.valid_console?(current_console) #A valid console must have a valid name, company, release year, and generation
   self.name?(current_console)
   self.company?(current_console)
   self.valid_release_year?(current_console)
