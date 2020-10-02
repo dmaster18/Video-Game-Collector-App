@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def username_different_from_password?
+  def username_different_from_password? #When registering, username must be different from password
     if self.username == self.password
       signup_error = "Your username must be different from your password."
       self.class.add_signup_error(signup_error)
