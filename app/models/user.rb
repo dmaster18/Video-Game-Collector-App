@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def valid_username? #Checks that username exists and is unique
+  def valid_username? #Checks that username exists, is unique, and is different from the password
     self.username_exists?
     self.unique_username?
     self.username_different_from_password?
