@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   @@signup_errors = []
   @@login_errors = []
 
-  #Class error methods (for signup and login errors)
+  #User Class error methods for signup and login errors
 
   def self.signup_errors #Holds list of signup errors to tell new user why signup failed
     @@signup_errors
@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
     @@login_errors
   end
 
-  def self.add_signup_error(error)
+  def self.add_signup_error(error) #
     self.signup_errors << error unless self.signup_errors.include?(error)
   end
 
@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     self.login_errors << error unless self.login_errors.include?(error)
   end
 
-  #Instance error methods for signup and login errors
+  #User Instance error methods for signup and login errors
 
   def username_exists? #Checks that username exists
     if self.username == nil || self.username == ""
