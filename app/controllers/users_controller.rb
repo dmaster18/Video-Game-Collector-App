@@ -19,7 +19,6 @@ class UsersController < ApplicationController
     if user.valid_username? && user.valid_password?
       user.save
       session[:user_id] = user.id
-      #@signup_success = @user.signup_success
       redirect "/users/account"
     else
       @signup_errors = User.signup_errors
