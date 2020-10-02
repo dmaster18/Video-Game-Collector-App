@@ -1,0 +1,15 @@
+<header> <title>My Console Collection</title> </header>
+
+<h2>My Console Collection</h2>
+
+<%if @consoles.empty? %>
+  <h4> It looks like your console collection is currently empty. </h4>
+<% else %>
+<ol>
+  <% @consoles.each do |console| %>
+    <li><a href="/consoles/<%=console.id%>"><%= console.company_and_name %></a></li>
+  <% end %>
+</ol>
+<% end %>
+
+<button onClick ="window.location.href = '/consoles/new'">Add Console to Collection</button>

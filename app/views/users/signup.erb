@@ -1,0 +1,21 @@
+<header> <title>Sign Up</title> </header>
+
+<h2>Sign Up to Video Game Collector</h2>
+
+<% if !@signup_errors.empty? %>
+  <h3 style="color:#FF0000"><u>WARNING: SIGNUP FAILED FOR THE FOLLOWING REASON<%="S" if @signup_errors.length > 1 %>:</u></h3>
+  <ol style="color:#FF0000">
+    <% @signup_errors.each do |error| %>
+      <li> <b> <%= error %> </b> </li>
+    <% end %>
+  </ol>
+  <% @signup_errors.clear%>
+<% end %>
+
+<form action="/users/signup" method="POST">
+  <input type="text" name="username" placeholder="New Username">
+  <input type="password" name="password" placeholder="New Password">
+  <input type="submit" value="Sign Up">
+</form>
+
+<button onClick ="window.location.href = '/users/login'">If you have an account, login here</button>

@@ -1,0 +1,41 @@
+<header> <title>Edit <%= @console.company_and_name %></title> </header>
+
+<h2>Edit <%= @console.company_and_name %></h2>
+
+<% if !@console_errors.empty? %>
+  <h3 style="color:#FF0000"><u>WARNING: CONSOLE COULD NOT BE EDITED FOR THE FOLLOWING REASON<%="S" if @console_errors.length > 1 %>:</u></h3>
+  <ol style="color:#FF0000">
+    <% @console_errors.each do |error| %>
+      <li> <b> <%= error %> </b> </li>
+    <% end %>
+  </ol>
+  <% @console_errors.clear %>
+<% end %>
+
+<form action="/consoles/<%= @console.id %>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+
+  <label> Company Name </label>
+  <input type="text" name="company" value="<%=@console.company%>"> </br>
+
+  <label> Console Name </label>
+  <input type="text" name="name" value="<%=@console.name%>"> </br>
+
+  <label> Release Year </label>
+  <input type="text" name="release_year" value="<%=@console.release_year%>"> </br>
+
+  <label> Generation </label>
+  <input type="text" name="generation" value="<%=@console.generation%>"> </br>
+
+  <label> Country </label>
+  <input type="text" name="country" value="<%=@console.country%>"> </br>
+
+  <label> Launch Price </label>
+  <input type="text" name="launch_price" value="<%=@console.launch_price%>"> </br>
+
+  <label> Total Units Sold </label>
+  <input type="text" name="units_sold" value="<%=@console.units_sold%>"> </br>
+
+  <input type="submit" value="Update Console">
+
+</form>

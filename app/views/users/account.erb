@@ -1,0 +1,15 @@
+<header> <title>My Account</title> </header>
+
+<h2>Hello <%= @user.username %>!!</h2>
+
+<h3><u>Your Collections</u></h3>
+<p> <a href="/consoles"> Visit your console collection </a> </p>
+<p> <a href="/games"> Visit your game collection </a> </p>
+
+<br> <br>
+
+<h3><u>Add to Your Collections</u></h3>
+<p> <a href="/consoles/new"> Add a console to your collection </a> </p>
+<p> <a href="/games/new"> Add a game to your collection </a> </p>
+
+<button onClick ="window.location.href = '/users/logout'">Logout</button>

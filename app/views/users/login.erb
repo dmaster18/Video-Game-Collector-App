@@ -1,0 +1,23 @@
+<header> <title>Log In </title> </header>
+
+<h2>Login</h2>
+
+<% if !@login_errors.empty? %>
+  <h3 style="color:#FF0000"><u>WARNING: LOGIN FAILED FOR THE FOLLOWING REASON<%="S" if @login_errors.length > 1 %>:</u></h2>
+  <ol style="color:#FF0000">
+    <% @login_errors.each do |error| %>
+      <li> <b> <%= error %> </b> </li>
+    <% end %>
+  </ol>
+  <% @login_errors.clear %>
+<% end %>
+
+
+
+<form action="/users/login" method="POST">
+  <input type="text" name="username" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <input type="submit" value="Log In">
+</form>
+
+<button onClick ="window.location.href = '/users/signup'">If new, signup here</button>

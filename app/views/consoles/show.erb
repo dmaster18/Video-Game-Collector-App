@@ -1,0 +1,26 @@
+<header> <title><%= @console.company_and_name %></title> </header>
+
+<h2>The <%= @console.company_and_name %></h2>
+
+<h3><u>Details</u></h3>
+<ul>
+  <li> Release Year: <%=@console.release_year %> </li>
+  <li> Console Generation: <%=@console.generation %> </li>
+  <li> Country of Origin: <%=@console.country %> </li>
+  <li> Launch Price: <%=@console.launch_price %> </li>
+  <li> Lifetime Units Sold: <%=@console.units_sold %> </li>
+</ul>
+
+<h3><u>Games</u><h3>
+<ol>
+  <% @console.games.each do |game| %>
+    <li><a href="/games/<%=game.id%>"><%= game.title %></a></li>
+  <% end %>
+</ol>
+
+<button onClick ="window.location.href = '/consoles/<%=@console.id%>/edit'">Edit Console</button>
+
+<form method="post" action="/consoles/<%= @console.id %>"> <%#=To delete console %>
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Console">
+</form>

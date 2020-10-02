@@ -1,0 +1,21 @@
+<header> <title><%= @game.title %></title> </header>
+
+<h2><%= @game.title %></h2>
+
+<h3><u>Details</u></h3>
+<ul>
+  <li> Platform: <a href="/consoles/<%=@game.console.id%>"> <%= @game.console.company_and_name %></a></li>
+  <li> Genre: <%=@game.genre %> </li>
+  <li> Rating: <%=@game.rating %> </li>
+  <li> Release Year: <%=@game.release_year %> </li>
+  <li> Developer: <%=@game.developer %> </li>
+  <li> Publisher: <%=@game.publisher %> </li>
+  <li> Country of Origin: <%=@game.country %> </li>
+</ul>
+
+<button onClick ="window.location.href = '/games/<%=@game.id%>/edit'">Edit Game</button>
+
+<form method="post" action="/consoles/<%= @game.id %>">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Game">
+</form>

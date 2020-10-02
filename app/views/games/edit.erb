@@ -1,0 +1,52 @@
+<header> <title>Edit <%= @game.title %></title> </header>
+
+<h2>Edit <%= @game.title %></h2>
+
+<% if !@game_errors.empty? %>
+  <h3 style="color:#FF0000"><u>WARNING: GAME COULD NOT EDITED FOR THE FOLLOWING REASON<%="S" if @game_errors.length > 1 %>:</u></h3>
+  <ol style="color:#FF0000">
+    <% @game_errors.each do |error| %>
+      <li> <b> <%= error %> </b> </li>
+    <% end %>
+  </ol>
+  <% @game_errors.clear%>
+<% end %>
+
+
+
+<form action="/games/<%= @game.id %>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+
+  <label> Title </label>
+  <input type="text" name="title" value="<%=@game.title%>"> </br>
+
+  <label> Genre </label>
+  <input type="text" name="genre" value="<%=@game.genre%>"> </br>
+
+  <label> Release Year </label>
+  <input type="text" name="release_year" value="<%=@game.release_year%>"> </br>
+
+  <label> Rating </label>
+  <input type="text" name="rating" value="<%=@game.rating%>"> </br>
+
+  <label> Country </label>
+  <input type="text" name="country" value="<%=@game.country%>"> </br>
+
+  <label> Developer </label>
+  <input type="text" name="developer" value="<%=@game.developer%>"> </br>
+
+  <label> Publisher </label>
+  <input type="text" name="publisher" value="<%=@game.publisher%>"> </br>
+
+  <label> What Console is this game for? </label>
+  <select name="console_id">
+    <% if !@consoles.empty? %>
+      <% @consoles.each do |console| %>
+        <option value="<%=console.id %>"> <%= console.company_and_name %> </option>
+      <% end %>
+    <% end %>
+  </select> </br>
+
+  <input type="submit" value="Update Game">
+
+</form>

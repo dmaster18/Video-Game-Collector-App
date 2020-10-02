@@ -1,0 +1,40 @@
+<header> <title>New Console</title> </header>
+
+<h2>Please Enter a New Game Console</h2>
+
+<% if !@console_errors.empty? %>
+  <h3 style="color:#FF0000"><u>WARNING: CONSOLE COULD NOT BE CREATED FOR THE FOLLOWING REASON<%="S" if @console_errors.length > 1 %>:</u></h3>
+  <ol style="color:#FF0000">
+    <% @console_errors.each do |error| %>
+      <li> <b> <%= error %> </b> </li>
+    <% end %>
+  </ol>
+  <% @console_errors.clear %>
+<% end %>
+
+
+<form action="/consoles" method="POST">
+  <label> Company Name </label>
+  <input type="text" name="company"> </br>
+
+  <label> Console Name </label>
+  <input type="text" name="name"> </br>
+
+  <label> Release Year </label>
+  <input type="text" name="release_year"> </br>
+
+  <label> Generation </label>
+  <input type="text" name="generation"> </br>
+
+  <label> Country </label>
+  <input type="text" name="country"> </br>
+
+  <label> Launch Price </label>
+  <input type="text" name="launch_price"> </br>
+
+  <label> Total Units Sold </label>
+  <input type="text" name="units_sold"> </br>
+
+  <input type="submit" value="Create Console">
+
+</form>
