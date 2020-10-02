@@ -8,11 +8,11 @@ class User < ActiveRecord::Base
 
   #Class error methods (for signup and login errors)
 
-  def self.signup_errors
+  def self.signup_errors #Holds list of signup errors to tell new user why signup failed
     @@signup_errors
   end
 
-  def self.login_errors
+  def self.login_errors #Holds list of login errors to tell existing user why login failed
     @@login_errors
   end
 
