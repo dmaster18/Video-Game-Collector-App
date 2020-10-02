@@ -64,7 +64,7 @@ def self.valid_generation?(current_console) #Produces an error if user enters a 
 end
 
 def self.valid_release_year?(current_console_or_game) #Produces an error if the user enters an optional release year that is not between 1972 (the year Atari brought Pong to the arcades) and 2020, the current year.
-  if current_console.release_year == ""
+  if current_console_or_game.release_year == ""
     true
   else
     release_year = current_console_or_game.release_year.to_i
