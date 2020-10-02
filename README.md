@@ -4,7 +4,7 @@ The Video Game Collector App is a Sinatra web application that allows users to s
 
 ## Installation
 
-Video Game Collector App can be downloaded from https://github.com/dmaster18/video_game_collector. Once downloaded, go to the program's directory from your local Terminal/Command Line and then run bundle install or bundle exec install to ensure all the dependencies are installed. Once all the dependencies have been installed, run the shotgun command from your Mac or Linux machine Terminal or rackup command from your Windows PC initiate the web application.
+Video Game Collector App can be downloaded from https://github.com/https://github.com/dmaster18/Video-Game-Collector-App. Once downloaded, go to the program's directory from your local Terminal/Command Line and then run bundle install or bundle exec install to ensure all the dependencies are installed. Once all the dependencies have been installed, run the shotgun command from your Mac or Linux machine Terminal or rackup command from your Windows PC initiate the web application.
 
 ## Usage
 
@@ -16,7 +16,7 @@ If the user ever wants to access his main account page, each page of the Video G
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/dmaster18/video_game_collector/pulls. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/https://github.com/dmaster18/Video-Game-Collector-App/pulls. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
