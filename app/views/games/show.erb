@@ -15,7 +15,7 @@
 
 <button onClick ="window.location.href = '/games/<%=@game.id%>/edit'">Edit Game</button>
 
-<form method="post" action="/consoles/<%= @game.id %>">
+<form method="post" action="/games/<%= @game.id %>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Game">
 </form>
