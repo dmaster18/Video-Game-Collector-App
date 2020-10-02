@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password #Bcrypt code that provides User class with methods to set and authenticate Bcrypt password
-  has_many :consoles #User objects has many consoles
-  has_many :games, through: :consoles #User object has many games through consoles
+  has_many :consoles
+  has_many :games, through: :consoles
 
   @@signup_errors = []
   @@login_errors = []
@@ -16,11 +16,11 @@ class User < ActiveRecord::Base
     @@login_errors
   end
 
-  def self.add_signup_error(error) #
+  def self.add_signup_error(error) #Ensures that no duplicate signup errors are added to @@signup_errors
     self.signup_errors << error unless self.signup_errors.include?(error)
   end
 
-  def self.add_login_error(error)
+  def self.add_login_error(error) #Ensures that no duplicate login errors are added to @@signup_errors
     self.login_errors << error unless self.login_errors.include?(error)
   end
 
