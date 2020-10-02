@@ -112,6 +112,7 @@ def self.title?(current_game) #Produces an error if user doesn't enter a title f
 end
 
 def self.valid_rating?(current_game) #Prdouces an error if the user enters a game rating (an optional field) other than one dictated by the ESRB, the USA game ratings board.
+  rating = current_game.rating
   if rating == ""
     true
   else
