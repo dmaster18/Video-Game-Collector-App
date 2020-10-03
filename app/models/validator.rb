@@ -63,7 +63,7 @@ def self.valid_generation?(current_console) #Produces an error if user enters a 
   end
 end
 
-def self.valid_release_year?(current_console_or_game) #Produces an error if the user enters an optional release year that is not between 1972 (the year Atari brought Pong to the arcades) and 2020, the current year.
+def self.valid_release_year?(current_console_or_game) #Produces an error if the user enters a release year (an optional field) that is not between 1972 (the year Atari brought Pong to the arcades) and 2020, the current year.
   if current_console_or_game.release_year == ""
     true
   else
@@ -89,7 +89,7 @@ def self.valid_release_year?(current_console_or_game) #Produces an error if the 
   end
 end
 
-def self.valid_console?(current_console) #A valid console must have a valid name, company, release year, and generation
+def self.valid_console?(current_console) #A valid console must have a valid name (mandatory), company (mandatory), release year (optional), and generation (optional)
   self.name?(current_console)
   self.company?(current_console)
   self.valid_release_year?(current_console)
@@ -136,7 +136,7 @@ def self.console?(current_game) #Produces an error if user doesn't select consol
   end
 end
 
-def self.valid_game?(current_game) #A valid game must have a valid title, release year, and console.
+def self.valid_game?(current_game) #A valid game must have a valid title (mandatory), release year (optional), rating (optional), and console (mandatory)
   self.title?(current_game)
   self.valid_release_year?(current_game)
   self.valid_rating?(current_game)
