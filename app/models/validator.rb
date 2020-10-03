@@ -3,7 +3,7 @@ class Validator #Validator class contains methods that validate consoles and gam
   @@console_errors = []
   @@game_errors = []
 
-#Class error methods (for consoles and game errors)
+#Class error methods for consoles and game errors
 
 def self.console_errors #Holds list of console errors to tell user why console could not be saved to the database
   @@console_errors
